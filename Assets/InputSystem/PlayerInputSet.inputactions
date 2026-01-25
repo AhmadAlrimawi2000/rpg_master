@@ -14,11 +14,20 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "1fa66adf-c7ac-45d2-b700-92efce9971ec",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
-                    "name": "2D Vector",
+                    "name": "Move 1",
                     "id": "df2ebffa-74a4-4b23-8943-bfa55a98b04a",
                     "path": "2DVector(mode=1)",
                     "interactions": "",
@@ -73,7 +82,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "2D Vector",
+                    "name": "Move 2",
                     "id": "0507c353-7233-4094-a3ec-3d84a8e6400f",
                     "path": "2DVector(mode=1)",
                     "interactions": "",
@@ -126,6 +135,17 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "0db5cb59-2465-4575-bb01-9776548b8d1f",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard & Mouse",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
