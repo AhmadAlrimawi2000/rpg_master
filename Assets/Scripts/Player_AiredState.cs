@@ -1,16 +1,17 @@
 using UnityEngine;
 
-public class Player_AiredState : MonoBehaviour
+public class Player_AiredState : EntityState
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Player_AiredState(Player player, StateMachine stateMachine, string animeBoolName) : base(player, stateMachine, animeBoolName)
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public override void Update()
     {
-        
+        base.Update();
+
+        if (player.moveInput.x != 0)
+            player.setVelocity(player.moveInput.x * player.moveSpeed, rb.linearVelocity.y);
     }
 }
