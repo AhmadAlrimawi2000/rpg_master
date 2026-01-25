@@ -12,6 +12,6 @@ public class Player_AiredState : EntityState
         base.Update();
 
         if (player.moveInput.x != 0)
-            player.setVelocity(player.moveInput.x * player.moveSpeed, rb.linearVelocity.y);
+            player.setVelocity(player.moveInput.x * (player.moveSpeed * player.inAirMoveMultiplier), rb.linearVelocity.y);
     }
 }
