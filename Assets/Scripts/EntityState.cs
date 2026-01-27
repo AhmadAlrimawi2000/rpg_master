@@ -25,7 +25,9 @@ public abstract class EntityState
 
     public virtual void Enter()
     {
-        //Everytime state will be changed, Enter() will be called. 
+        //Everytime state will be changed, Enter() will be called.
+        if (stateMachine.currentState == player.wallSlideState)
+            Debug.Log("Boolean Name: " + animeBoolName);
         anim.SetBool(animeBoolName, true);
     }
 
