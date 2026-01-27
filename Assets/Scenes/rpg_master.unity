@@ -688,9 +688,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2057371367}
+  - component: {fileID: 2057371364}
   - component: {fileID: 2057371366}
   - component: {fileID: 2057371365}
-  - component: {fileID: 2057371364}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -769,7 +769,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
