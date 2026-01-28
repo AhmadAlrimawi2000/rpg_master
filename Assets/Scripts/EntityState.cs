@@ -15,6 +15,8 @@ public abstract class EntityState
 
     protected float stateTimer;
 
+    protected bool triggerCalled;
+
     public EntityState(Player player, StateMachine stateMachine, string animeBoolName)
     {
         this.player = player;
@@ -29,6 +31,7 @@ public abstract class EntityState
     {
         //Everytime state will be changed, Enter() will be called.
         anim.SetBool(animeBoolName, true);
+        triggerCalled = false;
     }
 
     public virtual void Update()
@@ -50,6 +53,11 @@ public abstract class EntityState
         //This will be called everytime we exit a state and change to a new one.
         anim.SetBool(animeBoolName, false);
 
+    }
+
+    public void CallAnimationTrigger()
+    {
+        triggerCalled = true;
     }
 
 

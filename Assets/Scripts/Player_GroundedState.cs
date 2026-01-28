@@ -11,14 +11,15 @@ public class Player_GroundedState : EntityState
         base.Update();
 
         if (rb.linearVelocity.y < 0 && !player.isGrounded)
-        {
             stateMachine.ChangeState(player.fallState);
-        }
 
         if (input.Player.Jump.WasPressedThisFrame())
 
             stateMachine.ChangeState(player.jumpState);
 
-
+        if (input.Player.Attack.WasPressedThisFrame())
+        {
+            stateMachine.ChangeState(player.basicAttackState);
+        }
     }
 }

@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 348810772}
   - component: {fileID: 348810774}
   - component: {fileID: 348810773}
+  - component: {fileID: 348810775}
   m_Layer: 0
   m_Name: Animator
   m_TagString: Untagged
@@ -404,6 +405,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &348810775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348810771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0322a3b0967c9b6499aa0c3a009968ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player_AnimationTriggers
 --- !u!1 &1038420899
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,6 +723,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21877fc99780a4d4f975791248f1ed4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  attackVelocity: {x: 3, y: 1.5}
+  attackVelocityDuration: 0.1
   moveSpeed: 8
   jumpForce: 12
   wallJumpDirection: {x: 6, y: 12}
