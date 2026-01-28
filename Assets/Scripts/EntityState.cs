@@ -13,6 +13,8 @@ public abstract class EntityState
     protected Rigidbody2D rb;
     protected PlayerInputSet input;
 
+    protected float stateTimer;
+
     public EntityState(Player player, StateMachine stateMachine, string animeBoolName)
     {
         this.player = player;
@@ -26,8 +28,6 @@ public abstract class EntityState
     public virtual void Enter()
     {
         //Everytime state will be changed, Enter() will be called.
-        if (stateMachine.currentState == player.wallSlideState)
-            Debug.Log("Boolean Name: " + animeBoolName);
         anim.SetBool(animeBoolName, true);
     }
 
@@ -35,7 +35,14 @@ public abstract class EntityState
     {
         // The logic of the state is going to be run here.
         // Debug.Log("I run update of the " + this.animeBoolName);
+        stateTimer -= Time.deltaTime;
         anim.SetFloat("yVelocity", rb.linearVelocity.y);
+
+        if (input.Player.Dash.WasPressedThisFrame() && CanDash())
+        {
+            stateMachine.ChangeState(player.dashState);
+
+        }
     }
 
     public virtual void Exit()
@@ -43,5 +50,17 @@ public abstract class EntityState
         //This will be called everytime we exit a state and change to a new one.
         anim.SetBool(animeBoolName, false);
 
+    }
+
+
+    private bool CanDash()
+    {
+        if (player.wallDetected)
+            return false;
+
+        if (stateMachine.currentState == player.dashState)
+            return false;
+
+        return true;
     }
 }
