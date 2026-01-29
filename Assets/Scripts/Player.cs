@@ -21,8 +21,9 @@ public class Player : MonoBehaviour
 
     [Header("Attack Details")]
 
-    public Vector2 attackVelocity;
+    public Vector2[] attackVelocity;
     public float attackVelocityDuration = 0.1f;
+    public float comboResetTime = 1f;
 
     [Header("Movement Details")]
     public Vector2 moveInput { get; private set; }
