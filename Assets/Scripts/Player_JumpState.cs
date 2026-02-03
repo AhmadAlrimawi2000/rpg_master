@@ -20,8 +20,8 @@ public class Player_JumpState : Player_AiredState
         base.Update();
 
         //if yVelocity goes down, character is falling. transfer to fallState
-
-        if (rb.linearVelocity.y < 0)
+        // We need to be sure that we are not in jump attack state when we transfer to fall state.
+        if (rb.linearVelocity.y < 0 && stateMachine.currentState != player.jumpAttackState)
         {
             stateMachine.ChangeState(player.fallState);
         }
